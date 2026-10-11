@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff7f4">
+  <meta name="description" content="A heartfelt apology, written with love and no pressure to reply.">
+  <title>For You, My Love ♡</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fffaf7;
+      --paper-deep: #fff1ec;
+      --rose: #b65e70;
+      --rose-dark: #8f4053;
+      --ink: #382b30;
+      --muted: #806d73;
+      --line: rgba(143, 64, 83, .15);
+      --shadow: 0 22px 70px rgba(111, 55, 70, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 7% 8%, rgba(246, 203, 204, .36), transparent 32rem),
+        radial-gradient(ellipse at 93% 85%, rgba(247, 218, 190, .34), transparent 29rem),
+        var(--paper);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    .ambient { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .sparkle { position: absolute; color: #d99ba6; opacity: .42; animation: drift 9s ease-in-out infinite; }
+    .sparkle:nth-child(1) { top: 14%; left: 7%; font-size: 20px; }
+    .sparkle:nth-child(2) { top: 24%; right: 8%; font-size: 13px; animation-delay: -3s; }
+    .sparkle:nth-child(3) { bottom: 15%; left: 11%; font-size: 16px; animation-delay: -5s; }
+    .sparkle:nth-child(4) { bottom: 23%; right: 10%; font-size: 23px; animation-delay: -2s; }
+    @keyframes drift { 0%,100% { transform: translateY(0) rotate(-7deg); } 50% { transform: translateY(-10px) rotate(7deg); } }
+    main { position: relative; z-index: 1; width: min(100% - 32px, 760px); margin-inline: auto; padding: max(30px, env(safe-area-inset-top)) 0 max(34px, env(safe-area-inset-bottom)); }
+    header { text-align: center; padding: 13px 8px 18px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--rose-dark); font-size: .71rem; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
+    .eyebrow::before, .eyebrow::after { content: ""; width: 22px; height: 1px; background: #d9a0aa; }
+    .tiny-heart { display: grid; place-items: center; width: 64px; height: 64px; margin: 20px auto 15px; border: 1px solid rgba(182,94,112,.19); border-radius: 50%; background: rgba(255,255,255,.66); color: var(--rose); box-shadow: 0 9px 26px rgba(128,67,82,.08); font-size: 28px; }
+    h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.35rem, 8vw, 4.3rem); line-height: 1.06; letter-spacing: -.055em; font-weight: 500; }
+    h1 em { color: var(--rose); font-weight: 400; }
+    .intro { width: min(100%, 470px); margin: 18px auto 0; color: var(--muted); font-size: clamp(.94rem, 2.7vw, 1.05rem); line-height: 1.8; }
+    .letter-card { margin: 30px auto 0; padding: clamp(20px, 5vw, 38px); border: 1px solid rgba(255,255,255,.9); border-radius: 25px; background: rgba(255,255,255,.72); box-shadow: var(--shadow); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 19px; border-bottom: 1px solid var(--line); }
+    .card-label { color: var(--muted); font-size: .73rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .card-heart { color: var(--rose); font-size: 1.2rem; }
+    .envelope-wrap { padding: 29px 0 20px; text-align: center; }
+    .envelope { position: relative; width: 112px; height: 78px; margin: 4px auto 22px; border: 1px solid #e7b8bd; border-radius: 9px; background: linear-gradient(145deg, #f7d9d8, #edbfc5); box-shadow: 0 11px 20px rgba(149,74,90,.13); }
+    .envelope::before { position: absolute; content: ""; left: -1px; right: -1px; top: -1px; height: 57px; border: 1px solid #e7b8bd; border-radius: 9px 9px 0 0; background: #f9e3e0; clip-path: polygon(0 0,100% 0,50% 100%); }
+    .envelope::after { position: absolute; content: "♡"; inset: 0; display: grid; place-items: center; padding-top: 8px; color: #a84f64; font-size: 29px; text-shadow: 0 1px 0 rgba(255,255,255,.65); }
+    .envelope-wrap h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.55rem, 5vw, 2rem); font-weight: 500; letter-spacing: -.025em; }
+    .envelope-wrap p { margin: 10px auto 0; max-width: 360px; color: var(--muted); font-size: .93rem; line-height: 1.7; }
+    .primary-btn { display: inline-flex; justify-content: center; align-items: center; gap: 10px; min-height: 52px; width: min(100%, 295px); margin-top: 22px; padding: 14px 22px; border: 0; border-radius: 999px; color: #fffaf8; background: var(--rose-dark); font: inherit; font-size: .95rem; font-weight: 650; box-shadow: 0 8px 20px rgba(143,64,83,.2); cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; -webkit-tap-highlight-color: transparent; }
+    .primary-btn:hover { transform: translateY(-2px); background: #7e3548; box-shadow: 0 11px 25px rgba(143,64,83,.25); }
+    .primary-btn:active { transform: scale(.985); }
+    .primary-btn:focus-visible, .text-btn:focus-visible { outline: 3px solid #d99ba6; outline-offset: 4px; }
+    .letter { display: none; padding-top: 24px; animation: appear .55s ease both; }
+    .letter.open { display: block; }
+    @keyframes appear { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .salutation { margin: 0 0 17px; color: var(--rose-dark); font-family: Georgia, "Times New Roman", serif; font-size: 1.65rem; }
+    .letter p { margin: 0 0 16px; color: #58464d; font-size: .98rem; line-height: 1.9; }
+    .letter p strong { color: #6f3445; font-weight: 700; }
+    .signoff { margin-top: 25px !important; font-family: Georgia, "Times New Roman", serif; font-size: 1.3rem !important; font-style: italic; color: var(--rose-dark) !important; }
+    .open-note { margin-top: 19px; padding: 16px 17px; border-radius: 15px; background: #fff4f1; color: #73525c; text-align: center; font-size: .88rem; line-height: 1.65; }
+    .text-btn { display: block; margin: 18px auto 0; padding: 10px 14px; border: 0; background: transparent; color: var(--rose-dark); font: inherit; font-size: .88rem; font-weight: 650; cursor: pointer; }
+    .reasons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 22px auto 0; }
+    .reason { min-width: 0; padding: 19px 12px 17px; text-align: center; border: 1px solid var(--line); border-radius: 17px; background: rgba(255,255,255,.5); }
+    .reason .icon { display: block; margin-bottom: 9px; color: var(--rose); font-size: 1.23rem; }
+    .reason span:last-child { display: block; color: #735e65; font-size: .82rem; line-height: 1.55; }
+    .bottom-note { margin: 28px auto 0; text-align: center; color: #8c777e; font-size: .82rem; line-height: 1.7; }
+    .bottom-note .heart-line { display: block; margin-bottom: 7px; color: #c27b8b; font-size: 1.1rem; letter-spacing: .3em; }
+    footer { padding-top: 22px; text-align: center; color: #a08b91; font-size: .72rem; letter-spacing: .04em; }
+    .celebrate-heart { position: fixed; z-index: 5; bottom: -30px; color: #cf8292; pointer-events: none; animation: float-up 2.8s ease-out forwards; }
+    @keyframes float-up { 0% { opacity: 0; transform: translateY(0) scale(.7) rotate(0deg); } 15% { opacity: .75; } 100% { opacity: 0; transform: translateY(-110vh) scale(1.25) rotate(25deg); } }
+    @media (max-width: 440px) {
+      main { width: min(100% - 22px, 760px); padding-top: max(21px, env(safe-area-inset-top)); }
+      header { padding-top: 7px; }
+      .tiny-heart { width: 57px; height: 57px; margin-top: 17px; }
+      .letter-card { margin-top: 23px; border-radius: 21px; }
+      .reasons { gap: 8px; }
+      .reason { padding: 15px 7px 13px; border-radius: 14px; }
+      .reason span:last-child { font-size: .76rem; }
+      .letter p { font-size: .95rem; line-height: 1.85; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="sparkle">♡</span><span class="sparkle">✧</span><span class="sparkle">♡</span><span class="sparkle">✧</span>
+  </div>
+  <main>
+    <header>
+      <div class="eyebrow">a little note for you</div>
+      <div class="tiny-heart" aria-hidden="true">♡</div>
+      <h1>I’m truly sorry,<br><em>my love.</em></h1>
+      <p class="intro">Some words can hurt more than we realise. I made this little space for the things I want to say to you—with honesty, love, and no pressure.</p>
+    </header>
+
+    <section class="letter-card" aria-label="A personal letter">
+      <div class="card-top"><span class="card-label">From my heart to yours</span><span class="card-heart" aria-hidden="true">♡</span></div>
+      <div class="envelope-wrap" id="envelopePanel">
+        <div class="envelope" aria-hidden="true"></div>
+        <h2>A letter I owe you</h2>
+        <p>Whenever you're ready, there's something I want you to know.</p>
+        <button class="primary-btn" id="openLetter" type="button">Open my letter <span aria-hidden="true">♡</span></button>
+      </div>
+
+      <article class="letter" id="letter" aria-live="polite" aria-hidden="true">
+        <h2 class="salutation">My love, 🥺</h2>
+        <p>I’m truly, genuinely sorry for hurting you with my words. You didn’t deserve to be spoken to in a way that caused you pain, especially by someone who cares about you so deeply.</p>
+        <p>I don’t want to make excuses or pretend it wasn’t a big deal. <strong>Your feelings matter to me.</strong> I should have been more thoughtful with my words, and I’m sorry that I made you feel hurt instead of loved.</p>
+        <p>You mean so much to me. I never want you to feel that your emotions are unimportant or that you have to hide your hurt to make things easier for me. You deserve patience, respect, gentleness, and a love that feels safe.</p>
+        <p>I know that saying “sorry” can’t simply erase what happened. I’m not asking you to forgive me right now, and you don’t have to pretend that you’re okay. If you need time or space, I will respect that. When you feel ready, I want to listen—to understand how you felt, without interrupting or defending myself.</p>
+        <p>I can’t promise I’ll never make a mistake, but I can promise to take this seriously and work on being more careful with the way I speak to you. I want my actions—not just this message—to show you that I mean it.</p>
+        <p>I love you, baby. ❤️ You matter to me far more than winning an argument or being right. I’m sorry I hurt you, and I want to do better.</p>
+        <p class="signoff">I'm sorry, meri jaan. ♡</p>
+        <div class="open-note">You don’t need to reply right now, and you don’t have to be okay before you’re ready. Take all the time you need. I’m here to listen when you want to talk. 🫂</div>
+        <button class="text-btn" id="readAgain" type="button">Read it again ↑</button>
+      </article>
+    </section>
+
+    <section class="reasons" aria-label="What I want you to know">
+      <div class="reason"><span class="icon" aria-hidden="true">♡</span><span>Your feelings<br>matter to me</span></div>
+      <div class="reason"><span class="icon" aria-hidden="true">☁</span><span>I will listen<br>without excuses</span></div>
+      <div class="reason"><span class="icon" aria-hidden="true">✧</span><span>I will show it<br>through my actions</span></div>
+    </section>
+
+    <p class="bottom-note"><span class="heart-line" aria-hidden="true">♡ · ♡ · ♡</span>No pressure. No rush. Just a sincere apology, from my heart to yours.</p>
+    <footer>made with love, and a wish to do better ♡</footer>
+  </main>
+
+  <script>
+    const openButton = document.getElementById('openLetter');
+    const readAgainButton = document.getElementById('readAgain');
+    const letter = document.getElementById('letter');
+    const envelopePanel = document.getElementById('envelopePanel');
+
+    function showLetter() {
+      envelopePanel.hidden = true;
+      letter.classList.add('open');
+      letter.setAttribute('aria-hidden', 'false');
+      letter.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) releaseHearts();
+    }
+    function releaseHearts() {
+      const symbols = ['♡', '♥', '✧'];
+      for (let i = 0; i < 12; i++) {
+        const item = document.createElement('span');
+        item.className = 'celebrate-heart';
+        item.textContent = symbols[i % symbols.length];
+        item.style.left = (5 + Math.random() * 90) + 'vw';
+        item.style.fontSize = (14 + Math.random() * 13) + 'px';
+        item.style.animationDelay = (Math.random() * .7) + 's';
+        document.body.appendChild(item);
+        window.setTimeout(() => item.remove(), 3600);
+      }
+    }
+    openButton.addEventListener('click', showLetter);
+    readAgainButton.addEventListener('click', () => {
+      letter.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    });
+  </script>
+</body>
+</html>
