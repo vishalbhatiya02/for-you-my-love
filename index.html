@@ -79,9 +79,6 @@
     .hero-copy { width: min(100%, 440px); margin: 20px auto 0; color: #d5c0c7; font-size: .94rem; line-height: 1.85; }
     .tiny-note { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; color: #e0bdc7; font-family: var(--serif); font-size: .98rem; font-style: italic; }
     .tiny-note span { color: var(--gold); }
-    .promise-jump { display: inline-flex; align-items: center; gap: 8px; margin-top: 17px; padding: 10px 15px; border: 1px solid rgba(216,181,139,.35); border-radius: 999px; color: #f0d5dc; text-decoration: none; font-size: .82rem; background: rgba(255,255,255,.035); transition: background .2s ease, border-color .2s ease; }
-    .promise-jump:hover { background: rgba(255,255,255,.08); border-color: rgba(216,181,139,.65); }
-    .promises { scroll-margin-top: 18px; }
 
     .letter-shell { position: relative; margin: 30px auto 0; padding: 1px; border: 1px solid rgba(216,181,139,.42); border-radius: 28px; background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.025) 46%, rgba(216,181,139,.11)); box-shadow: 0 24px 75px rgba(0,0,0,.2); }
     .letter-paper { overflow: hidden; position: relative; padding: clamp(22px, 5vw, 39px); border-radius: 27px; color: var(--ink); background:
@@ -174,28 +171,7 @@
       <h1>I’m sorry,<br><em>my love.</em></h1>
       <p class="hero-copy">I can't take back the words that hurt you, but I can own them, listen to you, and try to do better. I made this little corner of the world just to say that properly.</p>
       <div class="tiny-note"><span>✦</span> from my heart to yours <span>✦</span></div>
-      <a class="promise-jump" href="#promises">A promise I want to keep <span aria-hidden="true">↓</span></a>
     </header>
-    <section class="promises" id="promises" aria-labelledby="promisesTitle">
-      <div class="section-kicker">not just words</div>
-      <h2 id="promisesTitle">Three things I want to do better</h2>
-      <p class="section-copy">I know trust comes from what I do next. Tap each little promise to read it.</p>
-      <div class="promise-list">
-        <details class="promise">
-          <summary><span class="promise-icon" aria-hidden="true">♡</span><span class="promise-title">Listen first</span></summary>
-          <p>I'll make space for your feelings and hear you out before I try to explain myself.</p>
-        </details>
-        <details class="promise">
-          <summary><span class="promise-icon" aria-hidden="true">✧</span><span class="promise-title">Choose my words</span></summary>
-          <p>Even in a difficult moment, I'll work on speaking with care instead of letting frustration speak for me.</p>
-        </details>
-        <details class="promise">
-          <summary><span class="promise-icon" aria-hidden="true">∞</span><span class="promise-title">Show the change</span></summary>
-          <p>I won't expect one apology to fix everything. I'll let my actions prove that I took this seriously.</p>
-        </details>
-      </div>
-    </section>
-
 
     <section class="letter-shell" aria-label="A personal apology letter">
       <div class="letter-paper">
@@ -223,7 +199,25 @@
       </div>
     </section>
 
-
+    <section class="promises" aria-labelledby="promisesTitle">
+      <div class="section-kicker">not just words</div>
+      <h2 id="promisesTitle">Three things I want to do better</h2>
+      <p class="section-copy">I know trust comes from what I do next. Tap each little promise to read it.</p>
+      <div class="promise-list">
+        <details class="promise">
+          <summary><span class="promise-icon" aria-hidden="true">♡</span><span class="promise-title">Listen first</span></summary>
+          <p>I'll make space for your feelings and hear you out before I try to explain myself.</p>
+        </details>
+        <details class="promise">
+          <summary><span class="promise-icon" aria-hidden="true">✧</span><span class="promise-title">Choose my words</span></summary>
+          <p>Even in a difficult moment, I'll work on speaking with care instead of letting frustration speak for me.</p>
+        </details>
+        <details class="promise">
+          <summary><span class="promise-icon" aria-hidden="true">∞</span><span class="promise-title">Show the change</span></summary>
+          <p>I won't expect one apology to fix everything. I'll let my actions prove that I took this seriously.</p>
+        </details>
+      </div>
+    </section>
 
     <section class="closing">
       <div class="closing-ornament" aria-hidden="true">✦ · ♡ · ✦</div>
