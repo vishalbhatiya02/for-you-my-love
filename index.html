@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#21131d">
+  <meta name="description" content="A sincere apology, made with love and without pressure to reply.">
+  <title>For You, My Love ♡</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --night: #21131d;
+      --night-soft: #35202e;
+      --wine: #7d334c;
+      --wine-deep: #5a2038;
+      --rose: #c16f83;
+      --rose-light: #f3ccd1;
+      --gold: #d8b58b;
+      --paper: #fffaf3;
+      --paper-shadow: #f6ece4;
+      --ink: #38272f;
+      --muted: #806c73;
+      --line: rgba(125, 51, 76, .16);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      overflow-x: hidden;
+      color: var(--paper);
+      background:
+        radial-gradient(ellipse at 50% -9%, rgba(171, 87, 117, .34), transparent 34rem),
+        radial-gradient(ellipse at 5% 48%, rgba(108, 45, 74, .2), transparent 27rem),
+        radial-gradient(ellipse at 98% 83%, rgba(141, 87, 93, .16), transparent 26rem),
+        var(--night);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    button { font: inherit; }
+    button:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    .sky, .sky::before, .sky::after { position: fixed; inset: 0; pointer-events: none; }
+    .sky { z-index: 0; overflow: hidden; }
+    .sky::before {
+      content: "";
+      opacity: .42;
+      background-image:
+        radial-gradient(1px 1px at 7% 19%, #fff 98%, transparent),
+        radial-gradient(1.5px 1.5px at 19% 66%, #f0c5d0 98%, transparent),
+        radial-gradient(1px 1px at 34% 12%, #fff 98%, transparent),
+        radial-gradient(1px 1px at 55% 31%, #f0c5d0 98%, transparent),
+        radial-gradient(1px 1px at 78% 15%, #fff 98%, transparent),
+        radial-gradient(1.5px 1.5px at 91% 48%, #f0c5d0 98%, transparent),
+        radial-gradient(1px 1px at 73% 76%, #fff 98%, transparent),
+        radial-gradient(1px 1px at 27% 89%, #fff 98%, transparent);
+    }
+    .sky::after {
+      content: "♡";
+      inset: auto auto 7% 6%;
+      color: rgba(240, 197, 208, .14);
+      font-family: var(--serif);
+      font-size: clamp(100px, 21vw, 230px);
+      transform: rotate(-18deg);
+    }
+    .page { position: relative; z-index: 1; width: min(100% - 30px, 760px); margin: 0 auto; padding: max(28px, env(safe-area-inset-top)) 0 max(30px, env(safe-area-inset-bottom)); }
+    .hero { text-align: center; padding: 14px 8px 8px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: #e6c4c9; font-size: .68rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
+    .eyebrow::before, .eyebrow::after { content: ""; width: 22px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+    .eyebrow::after { transform: scaleX(-1); }
+    .emblem { width: 72px; height: 72px; margin: 23px auto 17px; display: grid; place-items: center; position: relative; color: var(--rose-light); font-family: var(--serif); font-size: 31px; border-radius: 50%; border: 1px solid rgba(216,181,139,.58); background: radial-gradient(circle at 35% 25%, rgba(255,255,255,.15), transparent 50%), rgba(255,255,255,.025); box-shadow: 0 0 0 7px rgba(216,181,139,.035), 0 14px 42px rgba(0,0,0,.15); }
+    .emblem::before, .emblem::after { content: "✦"; position: absolute; color: var(--gold); font-size: 10px; }
+    .emblem::before { top: 7px; right: 9px; }
+    .emblem::after { bottom: 8px; left: 8px; }
+    h1 { margin: 0; color: #fff8f1; font-family: var(--serif); font-weight: 400; font-size: clamp(2.75rem, 10vw, 5rem); letter-spacing: -.055em; line-height: .99; }
+    h1 em { display: inline-block; margin-top: 5px; color: #e3a3b1; font-weight: 400; }
+    .hero-copy { width: min(100%, 440px); margin: 20px auto 0; color: #d5c0c7; font-size: .94rem; line-height: 1.85; }
+    .tiny-note { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; color: #e0bdc7; font-family: var(--serif); font-size: .98rem; font-style: italic; }
+    .tiny-note span { color: var(--gold); }
+
+    .letter-shell { position: relative; margin: 30px auto 0; padding: 1px; border: 1px solid rgba(216,181,139,.42); border-radius: 28px; background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.025) 46%, rgba(216,181,139,.11)); box-shadow: 0 24px 75px rgba(0,0,0,.2); }
+    .letter-paper { overflow: hidden; position: relative; padding: clamp(22px, 5vw, 39px); border-radius: 27px; color: var(--ink); background:
+      radial-gradient(ellipse at 100% 0%, rgba(240,207,196,.24), transparent 16rem),
+      radial-gradient(ellipse at 0% 100%, rgba(240,207,196,.19), transparent 19rem),
+      var(--paper); }
+    .letter-paper::before { content: ""; position: absolute; inset: 10px; border: 1px solid rgba(125,51,76,.09); border-radius: 20px; pointer-events: none; }
+    .paper-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 17px; border-bottom: 1px solid var(--line); color: #896b74; }
+    .paper-top span:first-child { font-size: .65rem; font-weight: 750; letter-spacing: .17em; text-transform: uppercase; }
+    .paper-top span:last-child { color: var(--wine); font-family: var(--serif); font-size: 1.3rem; }
+    .envelope-panel { padding: 27px 0 13px; text-align: center; }
+    .envelope { position: relative; width: 116px; height: 82px; margin: 7px auto 25px; border: 1px solid #d7a4ae; border-radius: 7px; background: linear-gradient(145deg, #f2cbd0, #d991a2); box-shadow: 0 13px 25px rgba(113,43,67,.16); isolation: isolate; }
+    .envelope::before { content: ""; position: absolute; inset: -1px -1px auto; height: 61px; border: 1px solid #d7a4ae; border-radius: 7px 7px 0 0; background: linear-gradient(160deg, #f7dfe0, #efc0c9); clip-path: polygon(0 0,100% 0,50% 100%); transform-origin: top; transition: transform .55s cubic-bezier(.2,.7,.2,1); z-index: 2; }
+    .envelope::after { content: "♡"; position: absolute; z-index: 3; top: 30px; left: 50%; transform: translateX(-50%); display: grid; place-items: center; width: 31px; height: 31px; border: 1px solid rgba(133,50,73,.24); border-radius: 50%; background: #b95e76; color: #fff5f3; font-family: var(--serif); font-size: 20px; box-shadow: 0 3px 9px rgba(95,32,56,.15); }
+    .envelope-panel.opening .envelope::before { transform: rotateX(180deg); }
+    .envelope-panel h2 { margin: 0; color: #4a2937; font-family: var(--serif); font-size: clamp(1.65rem, 5.5vw, 2.05rem); font-weight: 400; letter-spacing: -.025em; }
+    .envelope-panel p { max-width: 335px; margin: 11px auto 0; color: var(--muted); font-size: .91rem; line-height: 1.75; }
+    .primary-btn { display: inline-flex; justify-content: center; align-items: center; gap: 11px; width: min(100%, 310px); min-height: 54px; margin-top: 23px; padding: 15px 22px; border: 1px solid rgba(255,255,255,.17); border-radius: 999px; color: #fff8f2; background: linear-gradient(110deg, #8e3d58, #6c2944); font-size: .93rem; font-weight: 680; box-shadow: 0 9px 20px rgba(107,39,65,.2); cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, filter .2s ease; -webkit-tap-highlight-color: transparent; }
+    .primary-btn:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: 0 13px 26px rgba(107,39,65,.25); }
+    .primary-btn:active { transform: scale(.985); }
+    .button-heart { color: #f2c8d0; font-size: 1.1rem; }
+
+    .letter { display: none; position: relative; padding-top: 26px; animation: unfold .7s ease both; }
+    .letter.open { display: block; }
+    @keyframes unfold { from { opacity: 0; transform: translateY(13px); } to { opacity: 1; transform: translateY(0); } }
+    .salutation { margin: 0 0 19px; color: var(--wine-deep); font-family: var(--serif); font-size: 1.8rem; font-weight: 400; }
+    .letter p { position: relative; margin: 0 0 16px; color: #5a454d; font-size: .97rem; line-height: 1.92; }
+    .letter p strong { color: var(--wine-deep); font-weight: 750; }
+    .quote { margin: 23px 0; padding: 16px 17px 17px; border-left: 2px solid #c17b8b; background: rgba(240,207,196,.25); color: #79384e; font-family: var(--serif); font-size: 1.23rem; font-style: italic; line-height: 1.55; }
+    .signoff { margin-top: 25px !important; color: var(--wine) !important; font-family: var(--serif); font-size: 1.35rem !important; font-style: italic; }
+    .no-pressure { margin-top: 21px; padding: 18px 17px; border: 1px solid rgba(125,51,76,.12); border-radius: 15px; background: rgba(255,255,255,.56); text-align: center; color: #765c65; font-size: .87rem; line-height: 1.75; }
+    .no-pressure .little-heart { display: block; margin-bottom: 6px; color: #b76077; font-size: 1.2rem; }
+    .read-again { display: block; margin: 18px auto 0; padding: 10px 14px; border: 0; border-radius: 12px; background: transparent; color: var(--wine); font-size: .87rem; font-weight: 700; cursor: pointer; }
+
+    .promises { margin: 38px auto 0; text-align: center; }
+    .section-kicker { color: #d9b4be; font-size: .65rem; font-weight: 750; letter-spacing: .2em; text-transform: uppercase; }
+    .promises h2 { margin: 10px 0 8px; color: #fff5ef; font-family: var(--serif); font-size: clamp(1.8rem, 6.5vw, 2.45rem); font-weight: 400; letter-spacing: -.035em; }
+    .section-copy { max-width: 410px; margin: 0 auto; color: #cbb5be; font-size: .87rem; line-height: 1.75; }
+    .promise-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; margin-top: 22px; text-align: left; }
+    .promise { min-width: 0; overflow: hidden; border: 1px solid rgba(216,181,139,.22); border-radius: 17px; background: linear-gradient(145deg, rgba(255,255,255,.065), rgba(255,255,255,.025)); }
+    .promise summary { display: flex; height: 100%; min-height: 132px; flex-direction: column; align-items: flex-start; gap: 13px; padding: 16px 13px; color: #fff5ef; cursor: pointer; list-style: none; -webkit-tap-highlight-color: transparent; }
+    .promise summary::-webkit-details-marker { display: none; }
+    .promise summary::after { content: "+ tap to read"; color: #d8b58b; font-size: .68rem; line-height: 1.4; }
+    .promise[open] summary::after { content: "− close"; }
+    .promise-icon { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid rgba(216,181,139,.4); border-radius: 50%; color: #e5b8c4; font-family: var(--serif); font-size: 1rem; }
+    .promise-title { font-family: var(--serif); font-size: 1.02rem; line-height: 1.25; }
+    .promise p { margin: 0; padding: 0 13px 17px; color: #d5c0c7; font-size: .79rem; line-height: 1.7; }
+    .closing { margin: 35px auto 0; text-align: center; }
+    .closing-ornament { color: var(--gold); font-size: 1.1rem; letter-spacing: .52em; padding-left: .52em; }
+    .closing p { max-width: 390px; margin: 12px auto 0; color: #e5cbd2; font-family: var(--serif); font-size: clamp(1.15rem, 4vw, 1.35rem); font-style: italic; line-height: 1.65; }
+    .closing small { display: block; margin-top: 11px; color: #a9939c; font-size: .77rem; line-height: 1.7; }
+    footer { margin-top: 26px; text-align: center; color: #907b85; font-size: .68rem; letter-spacing: .055em; }
+    .floating { position: fixed; z-index: 6; bottom: -35px; pointer-events: none; color: #e5a6b7; text-shadow: 0 0 12px rgba(229,166,183,.3); animation: float-up 3.4s ease-out forwards; }
+    @keyframes float-up { 0% { opacity: 0; transform: translateY(0) rotate(-8deg) scale(.7); } 15% { opacity: .75; } 100% { opacity: 0; transform: translateY(-110vh) rotate(25deg) scale(1.2); } }
+    [hidden] { display: none !important; }
+    @media (max-width: 520px) {
+      .page { width: min(100% - 22px, 760px); padding-top: max(22px, env(safe-area-inset-top)); }
+      .hero { padding-top: 9px; }
+      .emblem { width: 63px; height: 63px; margin-top: 20px; font-size: 28px; }
+      .hero-copy { font-size: .9rem; line-height: 1.8; }
+      .letter-shell { margin-top: 25px; border-radius: 24px; }
+      .letter-paper { border-radius: 23px; padding: 22px 19px; }
+      .letter-paper::before { inset: 7px; border-radius: 17px; }
+      .promise-list { gap: 7px; }
+      .promise summary { min-height: 134px; padding: 13px 10px; gap: 11px; }
+      .promise-title { font-size: .94rem; }
+      .promise summary::after { font-size: .61rem; }
+      .promise p { padding: 0 10px 13px; font-size: .76rem; }
+      .letter p { font-size: .94rem; line-height: 1.87; }
+      .quote { font-size: 1.14rem; }
+    }
+    @media (max-width: 355px) {
+      .eyebrow { font-size: .59rem; letter-spacing: .16em; }
+      .promise-list { grid-template-columns: 1fr; }
+      .promise summary { min-height: 0; flex-direction: row; align-items: center; padding: 13px; }
+      .promise summary::after { margin-left: auto; }
+      .promise p { padding-left: 60px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">a little letter, just for you</div>
+      <div class="emblem" aria-hidden="true">♡</div>
+      <h1>I’m sorry,<br><em>my love.</em></h1>
+      <p class="hero-copy">I can't take back the words that hurt you, but I can own them, listen to you, and try to do better. I made this little corner of the world just to say that properly.</p>
+      <div class="tiny-note"><span>✦</span> from my heart to yours <span>✦</span></div>
+    </header>
+
+    <section class="letter-shell" aria-label="A personal apology letter">
+      <div class="letter-paper">
+        <div class="paper-top"><span>Something I need you to know</span><span aria-hidden="true">♡</span></div>
+        <div class="envelope-panel" id="envelopePanel">
+          <div class="envelope" aria-hidden="true"></div>
+          <h2>A letter I owe you</h2>
+          <p>There's no perfect way to undo hurt. But I want to start with honesty, if you're ready to read.</p>
+          <button class="primary-btn" id="openLetter" type="button">Open my heart <span class="button-heart" aria-hidden="true">♡</span></button>
+        </div>
+
+        <article class="letter" id="letter" aria-live="polite" aria-hidden="true">
+          <h2 class="salutation">My love, 🥺</h2>
+          <p>I’m truly, genuinely sorry for hurting you with my words. You didn’t deserve to be spoken to in a way that caused you pain, especially by someone who cares about you so deeply.</p>
+          <p>I don’t want to make excuses or pretend it wasn’t a big deal. <strong>Your feelings matter to me.</strong> I should have been more thoughtful with my words, and I’m sorry that I made you feel hurt instead of loved.</p>
+          <div class="quote">“You deserved gentleness from me, not pain.”</div>
+          <p>You mean so much to me. I never want you to feel that your emotions are unimportant or that you have to hide your hurt to make things easier for me. You deserve patience, respect, gentleness, and a love that feels safe.</p>
+          <p>I know that saying “sorry” can’t simply erase what happened. I’m not asking you to forgive me right now, and you don’t have to pretend that you’re okay. If you need time or space, I will respect that. When you feel ready, I want to listen—to understand how you felt, without interrupting or defending myself.</p>
+          <p>I can’t promise I’ll never make a mistake, but I can promise to take this seriously and work on being more careful with the way I speak to you. I want my actions—not just this message—to show you that I mean it.</p>
+          <p>I love you, baby. ❤️ You matter to me far more than winning an argument or being right. I’m sorry I hurt you, and I want to do better.</p>
+          <p class="signoff">I'm sorry, meri jaan. ♡</p>
+          <div class="no-pressure"><span class="little-heart" aria-hidden="true">♡</span>You don’t need to reply right now, and you don’t have to be okay before you’re ready. Take all the time you need. I’m here to listen when you want to talk. 🫂</div>
+          <button class="read-again" id="readAgain" type="button">↑ Read this letter again</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="promises" aria-labelledby="promisesTitle">
+      <div class="section-kicker">not just words</div>
+      <h2 id="promisesTitle">Three things I want to do better</h2>
+      <p class="section-copy">I know trust comes from what I do next. Tap each little promise to read it.</p>
+      <div class="promise-list">
+        <details class="promise">
+          <summary><span class="promise-icon" aria-hidden="true">♡</span><span class="promise-title">Listen first</span></summary>
+          <p>I'll make space for your feelings and hear you out before I try to explain myself.</p>
+        </details>
+        <details class="promise">
+          <summary><span class="promise-icon" aria-hidden="true">✧</span><span class="promise-title">Choose my words</span></summary>
+          <p>Even in a difficult moment, I'll work on speaking with care instead of letting frustration speak for me.</p>
+        </details>
+        <details class="promise">
+          <summary><span class="promise-icon" aria-hidden="true">∞</span><span class="promise-title">Show the change</span></summary>
+          <p>I won't expect one apology to fix everything. I'll let my actions prove that I took this seriously.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="closing-ornament" aria-hidden="true">✦ · ♡ · ✦</div>
+      <p>I'll give your heart the time it needs.<br>When you're ready, I'll be here to listen.</p>
+      <small>No pressure to reply. No rush to feel okay.<br>Just a sincere apology, from my heart to yours.</small>
+    </section>
+    <footer>made with love, and a wish to do better ♡</footer>
+  </main>
+
+  <script>
+    (() => {
+      const openButton = document.getElementById('openLetter');
+      const readAgainButton = document.getElementById('readAgain');
+      const letter = document.getElementById('letter');
+      const envelopePanel = document.getElementById('envelopePanel');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      function releaseHearts() {
+        const symbols = ['♡', '♥', '✧', '·'];
+        for (let i = 0; i < 15; i++) {
+          const item = document.createElement('span');
+          item.className = 'floating';
+          item.setAttribute('aria-hidden', 'true');
+          item.textContent = symbols[i % symbols.length];
+          item.style.left = (4 + Math.random() * 92) + 'vw';
+          item.style.fontSize = (13 + Math.random() * 15) + 'px';
+          item.style.animationDelay = (Math.random() * .8) + 's';
+          document.body.appendChild(item);
+          window.setTimeout(() => item.remove(), 4400);
+        }
+      }
+
+      function showLetter() {
+        if (letter.classList.contains('open')) return;
+        openButton.disabled = true;
+        envelopePanel.classList.add('opening');
+        const delay = reduceMotion.matches ? 0 : 360;
+        window.setTimeout(() => {
+          envelopePanel.hidden = true;
+          letter.classList.add('open');
+          letter.setAttribute('aria-hidden', 'false');
+          openButton.disabled = false;
+          letter.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
+          if (!reduceMotion.matches) releaseHearts();
+        }, delay);
+      }
+
+      openButton.addEventListener('click', showLetter);
+      readAgainButton.addEventListener('click', () => {
+        letter.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
+      });
+    })();
+  </script>
+</body>
+</html>
